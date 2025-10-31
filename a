@@ -60,12 +60,3 @@ def check_new_items():
     # Sauvegarde la liste
     with open(SEEN_FILE, "w") as f:
         json.dump(seen_items, f)
-
-def main():
-    send_telegram_message("🤖 Vinted Finder démarré !")
-    while True:
-        check_new_items()
-        time.sleep(CHECK_INTERVAL)
-
-if __name__ == "__main__":
-    main()
